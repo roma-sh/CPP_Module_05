@@ -21,11 +21,16 @@ AForm::AForm(std::string name, int sign_grade, int exe_grade) :
 	else if (_exe_grade < 1 || _sign_grade < 1)
 		throw std::runtime_error("Bureaucrat::GradeTooHighException");
 }
+AForm::AForm(AForm& original) : _name(original._name), _sign_grade(original._sign_grade), _exe_grade(original._exe_grade)
+{
+	this->_is_signed = original.getSigned();
+}
+
 
 AForm &AForm::operator=(const AForm &copy)
 {
 	if (this != &copy)
-		this->_is_signed = copy.getSigned();
+		this->_is_signed = copy._is_signed;
 	return *this;
 }
 

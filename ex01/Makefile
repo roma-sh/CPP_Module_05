@@ -6,9 +6,27 @@
 #    By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/31 23:22:45 by rshatra           #+#    #+#              #
-#    Updated: 2024/11/02 03:06:10 by rshatra          ###   ########.fr        #
+#    Updated: 2024/11/02 04:15:03 by rshatra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+Light_Red =  \033[38;5;196m
+Light_Green = \033[38;5;82m
+Light_Yellow = \033[38;5;226m
+Light_Blue = \033[38;5;39m
+Light_Magenta=  \033[38;5;201m
+Light_Cyan = \033[38;5;51m
+Orange = \033[38;5;208m
+Pink = \033[38;5;198m
+Turquoise = \033[38;5;44m
+Light_Grey = \033[38;5;245m
+Dark_Grey = \033[38;5;239m
+Purple = \033[38;5;93m
+Teal = \033[38;5;36m
+Coral = \033[38;5;210m
+Lavender = \033[38;5;171m
+Chartreuse = \033[38;5;118m
+Reset = \033[0m
 
 NAME = BurForm
 CFLAGS = -g -Wall -Werror -Wextra
@@ -18,13 +36,13 @@ SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 
-all: $(NAME)
+all: print_cpp $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
@@ -33,3 +51,21 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+print_cpp:
+	@echo "$(Light_Red)         CCCCCCCCCCCCCPPPPPPPPPPPPPPPPP   PPPPPPPPPPPPPPPPP        000000000     555555555555555555     "
+	@echo "$(Light_Green)      CCC::::::::::::CP::::::::::::::::P  P::::::::::::::::P     00:::::::::00   5::::::::::::::::5                "
+	@echo "$(Light_Yellow)    CC:::::::::::::::CP::::::PPPPPP:::::P P::::::PPPPPP:::::P  00:::::::::::::00 5::::::::::::::::5                "
+	@echo "$(Light_Blue)   C:::::CCCCCCCC::::CPP:::::P     P:::::PPP:::::P     P:::::P0:::::::000:::::::05:::::555555555555                "
+	@echo "$(Light_Magenta)  C:::::C       CCCCCC  P::::P     P:::::P  P::::P     P:::::P0::::::0   0::::::05:::::5                           "
+	@echo "$(Light_Cyan) C:::::C                P::::P     P:::::P  P::::P     P:::::P0:::::0     0:::::05:::::5                           "
+	@echo "$(Orange) C:::::C                P::::PPPPPP:::::P   P::::PPPPPP:::::P 0:::::0     0:::::05:::::5555555555                  "
+	@echo "$(Pink) C:::::C                P:::::::::::::PP    P:::::::::::::PP  0:::::0 000 0:::::05:::::::::::::::5                 "
+	@echo "$(Turquoise) C:::::C                P::::PPPPPPPPP      P::::PPPPPPPPP    0:::::0 000 0:::::0555555555555:::::5                "
+	@echo "$(Light_Grey) C:::::C                P::::P              P::::P            0:::::0     0:::::0            5:::::5               "
+	@echo "$(Dark_Grey) C:::::C                P::::P              P::::P            0:::::0     0:::::0            5:::::5               "
+	@echo "$(Purple)  C:::::C       CCCCCC  P::::P              P::::P            0::::::0   0::::::05555555     5:::::5               "
+	@echo "$(Teal)   C:::::CCCCCCCC::::CPP::::::PP          PP::::::PP          0:::::::000:::::::05::::::55555::::::5               "
+	@echo "$(Coral)    CC:::::::::::::::CP::::::::P          P::::::::P           00:::::::::::::00  55:::::::::::::55                "
+	@echo "$(Lavender)      CCC::::::::::::CP::::::::P          P::::::::P             00:::::::::00      55:::::::::55                  "
+	@echo "$(Chartreuse)         CCCCCCCCCCCCCPPPPPPPPPP          PPPPPPPPPP               000000000          555555555               $(Reset) "

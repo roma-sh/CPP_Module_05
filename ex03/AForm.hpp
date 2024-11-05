@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:54:51 by rshatra           #+#    #+#             */
-/*   Updated: 2024/11/02 06:06:11 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/11/05 21:46:14 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ class AForm
 		const int _sign_grade;
 		const int _exe_grade;
 	public:
+		AForm(std::string name, int sign_grade, int exe_grade);
+		AForm(AForm& original);
 		AForm &operator=(const AForm &copy);
 		virtual ~AForm() = 0;
-		AForm(std::string name, int sign_grade, int exe_grade);
 
 		std::string getName() const;
 		bool getSigned() const;
