@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 20:02:33 by rshatra           #+#    #+#             */
-/*   Updated: 2024/11/02 03:04:22 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/11/05 21:32:51 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,22 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(
 	// _name = name; // not allowed because _name is const
 	// _grade = grade;
 }
+Bureaucrat::Bureaucrat(Bureaucrat& original)
+	: _name(original._name), _grade(original._grade)
+{
+
+}
+
+Bureaucrat& Bureaucrat::operator=(Bureaucrat& original)
+{
+	if (this != &original)
+	{
+		this->_grade = original._grade;
+	}
+	return *this;
+}
+
+Bureaucrat::~Bureaucrat() {}
 
 std::string Bureaucrat::getName() const
 {

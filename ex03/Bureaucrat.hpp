@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 20:02:45 by rshatra           #+#    #+#             */
-/*   Updated: 2024/11/02 06:15:40 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/11/05 21:30:44 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class Bureaucrat
 		int	_grade;
 	public:
 		Bureaucrat(std::string name, int grade);
+		Bureaucrat(Bureaucrat& original);
+		Bureaucrat& operator=(Bureaucrat& original);
+		~Bureaucrat();
 
 		std::string getName() const;
 		int getGrade() const;

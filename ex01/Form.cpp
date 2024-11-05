@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:54:54 by rshatra           #+#    #+#             */
-/*   Updated: 2024/11/02 02:59:40 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/11/05 21:41:02 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,22 @@ Form::Form(std::string name, int sign_grade, int exe_grade) :
 	else if (_exe_grade < 1 || _sign_grade < 1)
 		throw std::runtime_error("Bureaucrat::GradeTooHighException");
 }
+
+Form::Form(Form& original) : _name(original._name), _sign_grade(original._sign_grade), _exe_grade(original._exe_grade)
+{
+	this->_is_signed = original.getSigned();
+}
+
+
+Form &Form::operator=(const Form &copy)
+{
+	if (this != &copy)
+		this->_is_signed = copy._is_signed;
+	return *this;
+}
+
+Form::~Form() {}
+
 std::string Form::getName() const
 {
 	return (_name);

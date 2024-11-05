@@ -6,7 +6,7 @@
 #    By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/31 23:22:45 by rshatra           #+#    #+#              #
-#    Updated: 2024/11/05 02:03:49 by rshatra          ###   ########.fr        #
+#    Updated: 2024/11/02 06:13:04 by rshatra          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ Lavender = \033[38;5;171m
 Chartreuse = \033[38;5;118m
 Reset = \033[0m
 
-NAME = multiForms
+NAME = BurForm
 CFLAGS = -g -Wall -Werror -Wextra
 CC = g++
 

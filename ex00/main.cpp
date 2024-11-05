@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 20:02:13 by rshatra           #+#    #+#             */
-/*   Updated: 2024/10/31 23:21:23 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/11/05 01:51:31 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
 		{
 			Bureaucrat Auslanderbehorde("Jerry", 1344);
 		}
-		catch(std::exception & e)
+		catch(std::exception& e)
 		{
 			std::cerr << e.what() << std::endl;
 		}
@@ -33,6 +33,8 @@ int main(void)
 			std::cout <<Auslanderbehorde.getName()<<"'s grade is:"<<Auslanderbehorde.getGrade() << std::endl;
 			Auslanderbehorde.increaseGrade();
 			std::cout <<Auslanderbehorde.getName()<<"'s grade is:"<<Auslanderbehorde.getGrade() << std::endl;
+			// test overloading:
+			std::cout << Auslanderbehorde << std::endl;
 		}
 		catch(std::exception & e)
 		{

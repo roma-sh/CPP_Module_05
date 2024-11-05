@@ -6,7 +6,7 @@
 /*   By: rshatra <rshatra@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 19:54:51 by rshatra           #+#    #+#             */
-/*   Updated: 2024/11/02 02:54:29 by rshatra          ###   ########.fr       */
+/*   Updated: 2024/11/05 21:40:06 by rshatra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class Form
 		const int _exe_grade;
 	public:
 		Form(std::string name, int sign_grade, int exe_grade);
+		Form(Form& original);
+		Form &operator=(const Form &copy);
+		virtual ~Form();
 
 		std::string getName() const;
 		bool getSigned() const;
